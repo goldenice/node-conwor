@@ -1,10 +1,10 @@
 /**
  * Generic 'concurrent' worker in javascript
- * @param  {Number}    Maximum simultaneous running functions
- * @param  {Function}  Function to use
- * @return {Function}  Adds an item to the queue of things being processed
+ * @param  {Number}    maxPending       Maximum simultaneous running functions
+ * @param  {Function}  func             Function to use
+ * @return {Function}                   Adds an item to the queue of things being processed
  */
-function concurrentWorker(maxSimultaneous, func) {
+function concurrentWorker(maxPending, func) {
     var queue = [];
     var pending = 0;
 
